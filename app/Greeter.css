@@ -1,0 +1,10 @@
+@import 'styles/variables';
+
+.Root {
+  background-color: #eee;
+  padding: 10px;
+  border: solid #ccc;
+  border-width: 0 0 .03rem;
+  font-size: .48em;
+  color: var(--heading-color);
+}
