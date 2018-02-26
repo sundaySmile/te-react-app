@@ -36,6 +36,7 @@ module.exports = Merge(CommonConfig,{
       minimize: true,
       debug: false
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor-[hash].min.js',
