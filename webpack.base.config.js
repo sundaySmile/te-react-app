@@ -7,11 +7,14 @@ function resolve (dir) {
 }
 
 module.exports = {
-  entry: __dirname + '/app/main.js',
+	entry: {
+		app: path.resolve(__dirname + '/app/main.js'),
+		vendor: ['react', 'react-dom']
+	},
   output: {
     path: path.resolve(__dirname, 'www'),
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    filename: '[name].bundle.js'
+    filename: '[name]-[hash:8].js'
   },
   resolve: {
     modules: [
