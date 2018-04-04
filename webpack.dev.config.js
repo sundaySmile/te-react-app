@@ -22,7 +22,17 @@ module.exports = Merge(CommonConfig, {
             localIdentName: "[local]"
           }
         },{
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            // Necessary for external CSS imports to work
+            ident: "postcss",
+            plugins: () => [
+              require("postcss-cssnext"),
+              require("postcss-nested"),
+              require("postcss-import"),
+              require("postcss-flexbugs-fixes")
+            ]
+          }
         }]
       }
     ]

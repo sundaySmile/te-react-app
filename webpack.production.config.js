@@ -22,7 +22,16 @@ module.exports = Merge(CommonConfig,{
               localIdentName: "[local]"
             }
           },{
-            loader: 'postcss-loader'
+            loader: 'postcss-loader',
+            options: {
+              ident: "postcss",
+              plugins: () => [
+                require("postcss-cssnext"),
+                require("postcss-nested"),
+                require("postcss-import"),
+                require("postcss-flexbugs-fixes")
+              ]
+            }
           }]
         })
       }
@@ -36,6 +45,7 @@ module.exports = Merge(CommonConfig,{
       minimize: true,
       debug: false
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor-[hash].min.js',
