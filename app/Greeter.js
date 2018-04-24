@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import styles from './Greeter.css';
 import avatarPic from './assets/extract-text.jpg';
+import SayHello from './components/ComponentNeedingStorage.js';
 
 class Greeter extends Component {
+	// state = {
+	// 	avatarPic
+	// };
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -13,7 +17,8 @@ class Greeter extends Component {
     return (
 			<div className={styles.Root}>
 				<img src={this.state.avatarPic} className={styles.avatar} />
-				<p>Hi, every body</p>
+				<p>Hi, {this.props.name}</p>
+				<SayHello />
 			</div>
     );
   }

@@ -2,10 +2,10 @@
 
 module.exports = {
   "plugins": [
-    require('precss'),
+    // require('precss'),
     require('postcss-cssnext'),
-    require('postcss-custom-properties'),
-    require('postcss-import')
+    require('postcss-import'),
+    require('postcss-custom-properties')
     // require('postcss-partial-import'),
     // require('autoprefixer'),
     // require('postcss-nested')
